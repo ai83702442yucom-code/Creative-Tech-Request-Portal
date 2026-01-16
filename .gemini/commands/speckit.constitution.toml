@@ -37,6 +37,32 @@ Follow this execution flow:
      - PATCH: Clarifications, wording, typo fixes, non-semantic refinements.
    - If version bump type ambiguous, propose reasoning before finalizing.
 
+   **MANDATORY PRINCIPLES**:
+   Unless explicitly overridden by user input, you MUST include and elaborate on the following core principles in the constitution. The content of the constitution MUST be in **English**, even if the user converses in another language.
+
+   1. **Code Quality**:
+      - Code MUST be clean, readable, and maintainable.
+      - Follow idiomatic patterns for the language/framework used.
+      - No "high-level shit" or pseudo-code; implementation must be concrete.
+      - Functions/Classes should be single-purpose and well-named.
+
+   2. **Testing Standards**:
+      - All new features and critical bug fixes MUST include automated tests.
+      - Test coverage should aim for critical paths first.
+      - Unit tests for logic, integration tests for workflows.
+
+   3. **User Experience Consistency**:
+      - UI/UX MUST be consistent across the application.
+      - Error messages MUST be helpful and actionable.
+      - Performance perception (loading states, feedback) is part of UX.
+      - Follow the established design system or style guide.
+
+   4. **Performance Requirements**:
+      - Applications MUST be performant and responsive.
+      - Optimize for fast load times and minimal latency.
+      - Avoid blocking the main thread in UI applications.
+      - Resource usage (memory, CPU) should be efficient.
+
 3. Draft the updated constitution content:
    - Replace every placeholder with concrete text (no bracketed tokens left except intentionally retained template slots that the project has chosen not to define yet—explicitly justify any left).
    - Preserve heading hierarchy and comments can be removed once replaced unless they still add clarifying guidance.
