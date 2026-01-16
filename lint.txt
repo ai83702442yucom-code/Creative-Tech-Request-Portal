@@ -1,0 +1,24 @@
+
+> tool-dev-requests@0.1.0 lint
+> eslint
+
+
+C:\Users\redri\Downloads\ANTIGRAVITY\Tool Development Request Form\src\components\ui\RequestDetailModal.tsx
+  3:13  warning  'Calendar' is defined but never used  @typescript-eslint/no-unused-vars
+  8:10  warning  'Input' is defined but never used     @typescript-eslint/no-unused-vars
+
+C:\Users\redri\Downloads\ANTIGRAVITY\Tool Development Request Form\src\lib\auth.ts
+  48:30  error  Parsing error: '>' expected
+
+C:\Users\redri\Downloads\ANTIGRAVITY\Tool Development Request Form\src\lib\authentication.ts
+  48:30  error  Parsing error: '>' expected
+
+C:\Users\redri\Downloads\ANTIGRAVITY\Tool Development Request Form\src\lib\services\requestService.ts
+  65:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  66:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\redri\Downloads\ANTIGRAVITY\Tool Development Request Form\src\lib\services\userService.ts
+  2:31  warning  'updateDoc' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 7 problems (4 errors, 3 warnings)
+

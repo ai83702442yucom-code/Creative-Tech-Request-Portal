@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && getUserRole() == "admin";
+    }
+    
+    // Counters (Internal)
+    match /counters/{counterId} {
+      allow read, write: if isSignedIn();
+    }
+    
+    // User Profiles
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      // Users can't change their own role, so we restrict write
+      // Only allow if user is creating their own doc (which sets default role) OR admin
+      allow create: if request.auth.uid == userId; 
+      allow update: if isAdmin(); 
+    }
+    
+    // Config (System Logo etc)
+    match /config/{configId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Requests
+    match /requests/{requestId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update: if isAdmin(); 
+      allow delete: if isAdmin();
+    }
+  }
+}
